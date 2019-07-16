@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap-theme.min.css">
+	<style type="text/css">
+		form{
+			width: 300px;
+			margin: 50px auto;
+			padding: 30px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- has-success   has-error  -->
+	<form data-bv-raise="change">
+		<div class="form-group">
+			<label for="exampleInputEmail1">Email address</label>
+			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
+				   data-bv="trun"
+				   data-bv-require="true"
+				   data-bv-require-error="* 邮箱地址为必填项"
+				   data-bv-email="true"
+				   data-bv-email-error="* 不合法的邮箱地址"
+				   data-bv-maxlength="20"
+				   data-bv-maxlength-error="* 邮箱地址不能超过20长度">
+		</div>
+		<div class="form-group">
+			<label for="phone">Phone Number</label>
+			<input type="text" class="form-control" id="phone" placeholder="phone"
+				   data-bv="trun"
+				   data-bv-require="true"
+				   data-bv-require-error="* 手机号为必填项"
+				   data-bv-phone="true"
+				   data-bv-phone-error="* 不合法的手机号"
+				   data-bv-maxlength="11"
+				   data-bv-maxlength-error="* 手机号不能超过11长度">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Password</label>
+			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+				   data-bv="trun"
+				   data-bv-require="true"
+				   data-bv-require-error="* 密码为必填项"
+				   data-bv-regex="^\w{6,12}$"
+				   data-bv-regex-error="* 密码必须有字母数字下划线组成的6-12位序列">
+		</div>
+		<button type="submit" class="btn btn-primary btn-block">Submit</button>
+	</form>
+	<from data-bv-raise="keypress">
+		<div class="form-group">
+			<label for="exampleInputEmail2">Email address</label>
+			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email"
+				   data-bv="true"
+				   data-bv-require="true"
+				   data-bv-require-error="* 邮箱地址为必填项"
+				   data-bv-email="true"
+				   data-bv-email-error="* 不合法的邮箱地址"
+				   data-bv-maxlength="20"
+				   data-bv-maxlength-error="* 邮箱地址不能超过20长度">
+		</div>
+	</from>
+	<script type="text/javascript" src="jQuery/jquery.min.js"></script>
+	<script type="text/javascript" src="myvalidator.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('form').MyValidator({
+				raise:'change',
+			});
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
