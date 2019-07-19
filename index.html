@@ -24,7 +24,7 @@
 		<div class="form-group">
 			<label for="exampleInputEmail1">Email address</label>
 			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
-				   data-bv="trun"
+				   data-bv="true"
 				   data-bv-require="true"
 				   data-bv-require-error="* 邮箱地址为必填项"
 				   data-bv-email="true"
@@ -35,7 +35,7 @@
 		<div class="form-group">
 			<label for="phone">Phone Number</label>
 			<input type="text" class="form-control" id="phone" placeholder="phone"
-				   data-bv="trun"
+				   data-bv="true"
 				   data-bv-require="true"
 				   data-bv-require-error="* 手机号为必填项"
 				   data-bv-phone="true"
@@ -46,7 +46,7 @@
 		<div class="form-group">
 			<label for="exampleInputPassword1">Password</label>
 			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-				   data-bv="trun"
+				   data-bv="true"
 				   data-bv-require="true"
 				   data-bv-require-error="* 密码为必填项"
 				   data-bv-regex="^\w{6,12}$"
@@ -54,7 +54,7 @@
 		</div>
 		<button type="submit" class="btn btn-primary btn-block">Submit</button>
 	</form>
-	<from data-bv-raise="keypress">
+	<form data-bv-raise="blur">
 		<div class="form-group">
 			<label for="exampleInputEmail2">Email address</label>
 			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email"
@@ -66,15 +66,15 @@
 				   data-bv-maxlength="20"
 				   data-bv-maxlength-error="* 邮箱地址不能超过20长度">
 		</div>
-	</from>
+	</form>
 	<script type="text/javascript" src="jQuery/jquery.min.js"></script>
 	<script type="text/javascript" src="myvalidator.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('form').MyValidator({
-				raise:'change',
+                raise:'keypress'
 			});
-		})
+		});
 	</script>
 </body>
 </html>
