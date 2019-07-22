@@ -20,7 +20,7 @@
 </head>
 <body>
 	<!-- has-success   has-error  -->
-	<form data-bv-raise="change">
+	<form>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Email address</label>
 			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
@@ -54,19 +54,19 @@
 		</div>
 		<button type="submit" class="btn btn-primary btn-block">Submit</button>
 	</form>
-	<form data-bv-raise="change">
-		<div class="form-group">
-			<label for="exampleInputEmail2">Email address</label>
-			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email"
-				   data-bv="true"
-				   data-bv-require="true"
-				   data-bv-require-error="* 邮箱地址为必填项"
-				   data-bv-email="true"
-				   data-bv-email-error="* 不合法的邮箱地址"
-				   data-bv-maxlength="20"
-				   data-bv-maxlength-error="* 邮箱地址不能超过20长度">
-		</div>
-	</form>
+	<!--<form data-bv-raise="change">-->
+		<!--<div class="form-group">-->
+			<!--<label for="exampleInputEmail2">Email address</label>-->
+			<!--<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email"-->
+				   <!--data-bv="true"-->
+				   <!--data-bv-require="true"-->
+				   <!--data-bv-require-error="* 邮箱地址为必填项"-->
+				   <!--data-bv-email="true"-->
+				   <!--data-bv-email-error="* 不合法的邮箱地址"-->
+				   <!--data-bv-maxlength="20"-->
+				   <!--data-bv-maxlength-error="* 邮箱地址不能超过20长度">-->
+		<!--</div>-->
+	<!--</form>-->
 	<script type="text/javascript" src="jQuery/jquery.min.js"></script>
 	<script type="text/javascript" src="myvalidator.js"></script>
 	<script type="text/javascript">

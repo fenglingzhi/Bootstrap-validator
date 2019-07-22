@@ -50,16 +50,22 @@
             // console.log($this.raise);
             $fields.on($this.raise,function(){
                 var $field =  $(this);
-                var $group = $field.parents();
-                var result = true; //教研结果
+                var $group = $field.parents(".form-group").removeClass("has-success has-error");
+                $group.find(".help-block").remove();
+                var result = true,error = null; //教研结果
                 $.each(_RULES_,function (rule,valid) {
                 	if($field.data("bv-"+rule)){
                         result = valid.call($field);
+                        // !result
+						if(!result){
+							error = $field.data("bv-"+rule+"-error")
+							$field.after("<span class='help-block'>"+error+"</span>")
+						}
                         return result;
-                        // console.log('配置了',rule)
 					}
-
                 });
+                $group.addClass(result ? "has-success" : "has-error")
+                console.log('配置了',$group);
                 console.log(result);
                 console.log($field)
             });
