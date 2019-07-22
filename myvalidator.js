@@ -8,13 +8,13 @@
 	 };
 	 var _RULES_ = {
 	 	"require": function () {
-			return true
+			return !!this.val()
         },//必填项
 		"regex":function () {
 			return true
         },//正则表达式
 		"email":function () {
-			return true
+			return /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(this.val())
         },//邮箱地址
 		"mobile":function () {
 			return true
@@ -47,17 +47,20 @@
 			$this.raise = $this.data('bv-raise') || $this.raise || _DEFS_.raise;
 			var $fields = $this.find("[data-bv=true]");
             // console.log($this);
-            console.log($this.raise);
+            // console.log($this.raise);
             $fields.on($this.raise,function(){
                 var $field =  $(this);
+                var $group = $field.parents();
                 var result = true; //教研结果
                 $.each(_RULES_,function (rule,valid) {
                 	if($field.data("bv-"+rule)){
-                		valid.call($field)
-                        console.log('配置了',rule)
+                        result = valid.call($field);
+                        return result;
+                        // console.log('配置了',rule)
 					}
 
                 });
+                console.log(result);
                 console.log($field)
             });
 		})

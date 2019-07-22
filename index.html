@@ -54,7 +54,7 @@
 		</div>
 		<button type="submit" class="btn btn-primary btn-block">Submit</button>
 	</form>
-	<form data-bv-raise="blur">
+	<form data-bv-raise="change">
 		<div class="form-group">
 			<label for="exampleInputEmail2">Email address</label>
 			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email"
@@ -72,9 +72,11 @@
 	<script type="text/javascript">
 		$(function(){
 			$('form').MyValidator({
-                raise:'keypress'
+                raise:'change'
 			});
+
 		});
+
 	</script>
 </body>
 </html>
